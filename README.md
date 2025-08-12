@@ -24,12 +24,6 @@ AI-powered web application that **automatically generates tailored resumes** and
 
 ---
 
-## 🎥 Demo Video
-
-🎬 **[Watch the Project Demo](https://your-video-link.com)**
-
----
-
 ## 🛠️ Features
 
 - 📝 **Resume Generation** – Tailored, job-specific resumes in markdown format.
