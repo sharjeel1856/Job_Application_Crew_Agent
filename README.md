@@ -4,12 +4,6 @@ AI-powered web application that **automatically generates tailored resumes** and
 
 ---
 
-## 📌 Live Demo
-
-🔗 **[Click here to view the project](https://your-demo-link.com)**
-
----
-
 ## 📸 Screenshots
 
 ![7ec41c4e0b144ece84ef31d3c184f109](https://github.com/user-attachments/assets/85afe7a8-8a9a-4bd0-8825-e9cf60de34e9)
