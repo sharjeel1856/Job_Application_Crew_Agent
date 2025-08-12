@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application System</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Job Application System</h1>
+            <p>AI-powered resume tailoring and interview preparation</p>
+        </header>
+
+        <form id="jobForm" class="main-form">
+            <!-- Job Details Section -->
+            <div class="form-section">
+                <h2>📋 Job Details</h2>
+                
+                <div class="form-group">
+                    <label for="job_url">Job Posting URL *</label>
+                    <input type="url" id="job_url" name="job_url" required 
+                           placeholder="https://www.linkedin.com/jobs/view/...">
+                </div>
+
+                <div class="form-group">
+                    <label for="github_url">GitHub Profile URL *</label>
+                    <input type="url" id="github_url" name="github_url" required 
+                           placeholder="https://github.com/username">
+                </div>
+
+                <div class="form-group">
+                    <label for="linkedin_url">LinkedIn Profile URL *</label>
+                    <input type="url" id="linkedin_url" name="linkedin_url" required 
+                           placeholder="https://www.linkedin.com/in/username">
+                </div>
+            </div>
+
+            <!-- Resume Section -->
+            <div class="form-section">
+                <h2>📄 Resume</h2>
+                
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="resume_type" value="file" id="resume_file_radio">
+                        <span class="radio-custom"></span>
+                        Upload File
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="resume_type" value="text" id="resume_text_radio" checked>
+                        <span class="radio-custom"></span>
+                        Paste Content
+                    </label>
+                </div>
+
+                <div id="resume_file_input" class="input-section" style="display: none;">
+                    <div class="form-group">
+                        <label for="resume_file">Choose Resume File</label>
+                        <input type="file" id="resume_file" name="resume_file" 
+                               accept=".pdf,.docx,.md,.txt">
+                        <small>Supported formats: PDF, DOCX, MD, TXT (Max 5MB)</small>
+                    </div>
+                </div>
+
+                <div id="resume_text_input" class="input-section">
+                    <div class="form-group">
+                        <label for="resume_content">Paste Your Resume Content</label>
+                        <textarea id="resume_content" name="resume_content" rows="12" 
+                                  placeholder="Paste your resume content here...&#10;&#10;Example:&#10;# John Doe - Software Engineer&#10;## Experience&#10;• Developed Flutter applications...&#10;• Integrated APIs and databases..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LinkedIn Section -->
+            <div class="form-section">
+                <h2>👤 LinkedIn Profile</h2>
+                
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="linkedin_type" value="file" id="linkedin_file_radio">
+                        <span class="radio-custom"></span>
+                        Upload File
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="linkedin_type" value="text" id="linkedin_text_radio" checked>
+                        <span class="radio-custom"></span>
+                        Paste Content
+                    </label>
+                </div>
+
+                <div id="linkedin_file_input" class="input-section" style="display: none;">
+                    <div class="form-group">
+                        <label for="linkedin_file">Choose LinkedIn Backup File</label>
+                        <input type="file" id="linkedin_file" name="linkedin_file" 
+                               accept=".txt,.md">
+                        <small>Supported formats: TXT, MD (Max 2MB)</small>
+                    </div>
+                </div>
+
+                <div id="linkedin_text_input" class="input-section">
+                    <div class="form-group">
+                        <label for="linkedin_content">Paste LinkedIn Profile Content</label>
+                        <textarea id="linkedin_content" name="linkedin_content" rows="8" 
+                                  placeholder="Paste your LinkedIn profile content here...&#10;&#10;Example:&#10;John Doe - Software Engineer&#10;Experience: Flutter Developer at Tech Company&#10;Skills: Python, FastAPI, Flutter, Firebase..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-section">
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span class="btn-text">🚀 Start Analysis</span>
+                    <span class="btn-loading" style="display: none;">Processing...</span>
+                </button>
+            </div>
+        </form>
+
+        <!-- Progress Modal -->
+        <div id="progressModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Processing Your Application...</h3>
+                <div class="progress-steps">
+                    <div class="step">
+                        <div class="step-icon">🔍</div>
+                        <div class="step-text">Analyzing Job Posting</div>
+                        <div class="step-progress">
+                            <div class="progress-bar" id="step1-progress"></div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">👤</div>
+                        <div class="step-text">Building Profile</div>
+                        <div class="step-progress">
+                            <div class="progress-bar" id="step2-progress"></div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">📄</div>
+                        <div class="step-text">Tailoring Resume</div>
+                        <div class="step-progress">
+                            <div class="progress-bar" id="step3-progress"></div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🎯</div>
+                        <div class="step-text">Preparing Interview</div>
+                        <div class="step-progress">
+                            <div class="progress-bar" id="step4-progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+</body>
+</html>

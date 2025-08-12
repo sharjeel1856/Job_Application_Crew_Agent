@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - Job Application System</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <style>
+        .results-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .success-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+        
+        .success-header h1 {
+            color: #38a169;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .result-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            background: #f7fafc;
+        }
+        
+        .result-section h2 {
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .file-content {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #718096;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: #4a5568;
+            transform: translateY(-2px);
+        }
+        
+        .file-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #edf2f7;
+            border-radius: 8px;
+        }
+        
+        .file-size {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .results-container {
+                padding: 20px;
+            }
+            
+            .result-section {
+                padding: 20px;
+            }
+            
+            .file-info {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="results-container">
+            <div class="success-header">
+                <h1>🎉 Analysis Complete!</h1>
+                <p>Your job application materials have been successfully generated</p>
+            </div>
+
+            <!-- Resume Section -->
+            <div class="result-section">
+                <h2>
+                    <span>📄</span>
+                    Tailored Resume
+                </h2>
+                <div class="file-info">
+                    <span>Generated specifically for your target job</span>
+                    <span class="file-size">{{ resume_size }} KB</span>
+                </div>
+                <a href="/download/tailored_resume.md" class="download-btn">
+                    📥 Download Resume (MD)
+                </a>
+                <div class="file-content" id="resume-content">
+                    {{ resume_content }}
+                </div>
+            </div>
+
+            <!-- Interview Materials Section -->
+            <div class="result-section">
+                <h2>
+                    <span>🎯</span>
+                    Interview Preparation Materials
+                </h2>
+                <div class="file-info">
+                    <span>Questions and STAR responses for your interview</span>
+                    <span class="file-size">{{ interview_size }} KB</span>
+                </div>
+                <a href="/download/interview_materials.md" class="download-btn">
+                    📥 Download Interview Prep (MD)
+                </a>
+                <div class="file-content" id="interview-content">
+                    {{ interview_content }}
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/" class="back-btn">
+                    🔄 Start New Analysis
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add syntax highlighting for markdown content
+        function formatMarkdown(content) {
+            return content
+                .replace(/^### (.*$)/gim, '<h3 style="color: #2d3748; margin: 15px 0 10px 0;">$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2 style="color: #4a5568; margin: 20px 0 15px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1 style="color: #2d3748; margin: 25px 0 20px 0;">$1</h1>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong style="color: #2d3748;">$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em style="color: #4a5568;">$1</em>')
+                .replace(/^- (.*$)/gim, '<li style="margin: 5px 0;">• $1</li>')
+                .replace(/\n\n/g, '<br><br>');
+        }
+
+        // Apply formatting when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const resumeContent = document.getElementById('resume-content');
+            const interviewContent = document.getElementById('interview-content');
+            
+            if (resumeContent) {
+                resumeContent.innerHTML = formatMarkdown(resumeContent.textContent);
+            }
+            
+            if (interviewContent) {
+                interviewContent.innerHTML = formatMarkdown(interviewContent.textContent);
+            }
+        });
+    </script>
+</body>
+</html>

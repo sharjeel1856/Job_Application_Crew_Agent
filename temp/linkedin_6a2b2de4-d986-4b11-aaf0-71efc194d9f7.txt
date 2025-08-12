@@ -1,0 +1,75 @@
+
+**Resume**
+
+**Contact**
+Islamabad
+[awansharjeel1122@gmail.com](mailto:awansharjeel1122@gmail.com)
+[LinkedIn Profile](www.linkedin.com/in/muhammad-sharjeel-59a255203)
+
+**Top Skills**
+
+* Web Applications
+* Machine Learning
+* Product Marketing
+
+**Certifications**
+
+* Build AI Application using ChatGPT – Zaheen.IT
+* Hotstar Clone using HTML, CSS and JavaScript Bootcamp
+* Certificate of Appreciation
+* Technical Career Counseling Webinar Session
+
+---
+
+**Muhammad Sharjeel**
+Flutter Dev | Firebase | REST APIs | GetX/BLoC | GitHub | UI/UX | Marketing | SE Graduate (2021–25)
+Rawalpindi District, Punjab, Pakistan
+
+---
+
+**Summary**
+In today’s fast-paced digital world, building apps that are more than just functional is crucial — they must be intuitive, user-friendly, and capable of delivering standout experiences.
+
+I’m Muhammad Sharjeel, a fresh Software Engineering graduate and passionate Flutter Developer, open to work on projects involving mobile and web application development.
+
+I specialize in creating smart, scalable, and future-ready apps powered by Flutter, Firebase, Cloud Firestore, and REST APIs. My focus is on solving real-world problems with clean architecture, modern UI/UX, and AI-enhanced features that align with the latest industry trends.
+
+If you're looking to build a custom mobile or web app, enhance your current solution, or kick-start a new idea, I’m here to help. Let’s develop applications that exceed expectations, boost engagement, and drive long-term success.
+
+Open for freelance projects! Let’s collaborate and bring your vision to life.
+
+Best regards,
+Muhammad Sharjeel
+
+---
+
+**Experience**
+
+* **EGeeks Global** – *AI Intern*
+  *July 2025 – Present (2 months)* – Pakistan
+  Currently working as an AI Intern, focusing on AI automation projects using OpenAI, GenAI, and ML/DL techniques. Gaining hands-on experience in building intelligent systems and deploying real-world AI solutions.
+
+* **Google Developer Student Club – AUST** – *Flutter Developer | Core Team Member*
+  *October 2023 – June 2024 (9 months)* – Pakistan
+  Contributed as a core team member, providing technical support for GDSC activities and projects. Worked as a Lead Flutter Developer, organizing community events and guiding students on Google technologies and Flutter.
+
+* **Change Mechanics Pvt Ltd** – *App Developer*
+  *January 2024 – February 2024 (2 months)* – Peshawar, Pakistan
+  Completed an in-person certification in App Development at Abbottabad. Learned advanced Flutter concepts during the program.
+
+* **URRAAN – Runway to Digital Flight** – *Flutter Developer*
+  *September 2023 – October 2023 (2 months)* – Abbottabad IT Park, Pakistan
+  First internship as a Flutter developer under the Codematics program. Learned in a professional environment with mentorship.
+
+* **Reckitt** – *Marketing Team*
+  *March 2021 – June 2021 (4 months)* – Pakistan
+  Managed marketing, product listings, and demand collection for Reckitt products in the Hazara Division, collaborating with utility stores and supermarkets.
+
+---
+
+**Education**
+Abbottabad University of Science and Technology (AUST)
+Bachelor’s degree in Computer Software Engineering
+*September 2020 – February 2025*
+
+
