@@ -22,9 +22,9 @@ AI-powered web application that **automatically generates tailored resumes** and
 
 ![870c39d53c654262b1da9aaca60c17bf](https://github.com/user-attachments/assets/ee9f7e1f-0b52-4d78-82df-479e5012151a)
 
-![8863315e60ae44d5ab3a53385b731b37](https://github.com/user-attachments/assets/ac05fe30-e73c-4e6f-9497-951955327bc8)
-
 ![6b0e9024e6644de08bd271ed0b085ec5](https://github.com/user-attachments/assets/ceeac8f9-a828-41c6-b3c2-7d2def9fde84)
+
+![8863315e60ae44d5ab3a53385b731b37](https://github.com/user-attachments/assets/ac05fe30-e73c-4e6f-9497-951955327bc8)
 
 ![c989d569d8874a16a1c79013ee80d47d](https://github.com/user-attachments/assets/05726fea-bff8-4697-ace2-38d82e6e7c2d)
 
